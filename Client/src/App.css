@@ -1,0 +1,10 @@
+@import 'tailwindcss';
+
+body{
+  background-color: #111;
+  color: #ddd;
+}
+
+.Linear-Banner{
+  background: linear-gradient(to right, #000033, #111);
+}
