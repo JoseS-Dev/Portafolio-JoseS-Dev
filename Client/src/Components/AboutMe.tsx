@@ -17,7 +17,7 @@ export function About() {
                     </div>
                     <div className="w-full md:w-2/5 flex flex-col items-center justify-center mt-4 md:mt-0">
                         <figure className="w-3/4 md:w-full h-48 md:h-full p-2 md:p-5 rounded-2xl">
-                            <img alt="AboutMe-Image" src="../../public/About-me.png" className="object-fill w-full h-full rounded-2xl" />
+                            <img alt="AboutMe-Image" src="/About-me.png" className="object-fill w-full h-full rounded-2xl" />
                         </figure>
                     </div>
                 </div>

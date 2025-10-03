@@ -15,7 +15,7 @@ export function Banner() {
             </article>
             <article className="w-full md:w-2/5 flex flex-col items-center justify-center">
                 <figure className="w-48 h-48 md:w-2/3 md:h-3/4 shadow-lg/30 shadow-blue-600 rounded-full md:ml-12 bg-black hover:shadow-blue-700 hover:scale-105 transition-transform duration-300 cursor-pointer flex items-center justify-center">
-                    <img alt="JoseS-Dev" className="w-full h-full rounded-full object-fill opacity-55" src="../../public/JoseS-Dev.jpg" />
+                    <img alt="JoseS-Dev" className="w-full h-full rounded-full object-fill opacity-55" src="/JoseS-Dev.jpg" />
                 </figure>
             </article>
         </section>

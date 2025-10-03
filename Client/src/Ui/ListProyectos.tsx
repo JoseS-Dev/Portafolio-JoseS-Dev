@@ -1,7 +1,7 @@
 // Lista de mis proyectos
 export const ListProyects = [
     {
-        'ImageURl': '../../public/UFC-banner.jpg',
+        'ImageURl': '/UFC-banner.jpg',
         'LinkRepo': 'https://github.com/JoseS-Dev/UFC-API-APP',
         'titleApp': 'UFC-API-APP',
         'status': 'En Desarrollo',
