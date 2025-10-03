@@ -1,8 +1,9 @@
-const STRONG_HOME = () => <strong className='text-blue-500'>Programador Full-Stack</strong>
+const STRONG_HOME = () => <strong className='text-blue-500'>Programador Full-Stack Jr</strong>
 // Lista de titulos de las secciones
 export const titlesSections = {
     Home: () => <>JoseS-Dev - <STRONG_HOME /></>,
-    About: 'Hablemos de mi'
+    About: 'Hablemos de mi',
+    Skills: 'Mis Skills'
 }
 
 // Lista de parrafos de las secciones
@@ -26,5 +27,12 @@ export const paragraphsSections = {
             Actualmente, me encuentro cursando los últimos semestres de mi carrera de Ingeniería de Computación, 
             lo que complementa mi experiencia práctica con una sólida base teórica, preparándome para abordar los desafíos más grandes en el mundo del desarrollo de software.
         `
-    }
+    },
+    Skill: `
+        A continuación se muestra algunas de las tecnologias y herramientas donde
+        tengo Experiencia demostrada en el diseño y la implementación de soluciones de software, 
+        con un profundo conocimiento de todo el stack de desarrollo. 
+        Mi expertise abarca el frontend, backend y la gestión de bases de datos, 
+        asegurando la creación de sistemas integrales y eficientes. las cuales son las siguientes:
+    `
 }

@@ -1,9 +1,9 @@
 import { paragraphsSections, titlesSections } from "../Ui/Ui"
 export function About(){
     return (
-        <section id="About" className="w-full h-135 p-4 
+        <section id="Sobre Mi" className="w-full h-135 p-4 
         flex flex-col items-center border-b-2 border-blue-500">
-            <article className="w-full min-h-full flex flex-col items-center gap-1.5">
+            <article className="w-full min-h-full flex flex-col items-center gap-1.5 p-2">
                 <h2 className="text-3xl px-2 font-semibold italic w-full border-b-2 border-blue-600">
                     {titlesSections.About}
                 </h2>

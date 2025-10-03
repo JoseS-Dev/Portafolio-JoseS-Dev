@@ -4,7 +4,7 @@ export function Banner(){
     return (
         <section className="w-full min-h-screen relative 
         flex items-center justify-evenly border-b-2 border-blue-500">
-            <article className="w-1/2 h-full flex flex-col items-center 
+            <article className="w-3/5 h-full flex flex-col items-center 
             justify-center p-3">
                 <div className="w-full h-2/3
                 flex flex-col justify-center px-7 mb-12 ml-6 gap-1.5">
@@ -17,7 +17,7 @@ export function Banner(){
                     </p>
                 </div>
             </article>
-            <article className="w-1/2 h-full flex flex-col items-center
+            <article className="w-2/5 h-full flex flex-col items-center
             justify-center">
                 <figure className="w-2/3 h-3/4 shadow-lg/30 shadow-blue-600 
                 rounded-full ml-12 bg-black hover:shadow-blue-700 

@@ -2,6 +2,7 @@ import { Header } from "./Components/Header"
 import { Banner } from "./Components/Banner"
 import { About } from "./Components/AboutMe"
 import { Skills } from "./Components/Skills"
+import { Proyectos } from "./Components/Proyects"
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Banner/>
       <About/>
       <Skills/>
+      <Proyectos/>
     </main>
   )
 }

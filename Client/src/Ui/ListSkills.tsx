@@ -61,14 +61,15 @@ export const ListSkills = [
             'Web Scapping',
             'POO',
             'MVC',
+            'API',
             'ECMAScript ES6',
             'MVP',
             'SCRUM',
             'SOLID',
-            'Metodologia Cascada',
+            'M.Cascada',
             'Diseño Web',
             'Desarrollo Web',
-            'Programción Modular'
+            'P. Modular'
         ]
     },
     {
