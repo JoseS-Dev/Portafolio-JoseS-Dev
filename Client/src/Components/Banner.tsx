@@ -2,8 +2,8 @@ import { titlesSections, paragraphsSections } from "../Ui/Ui"
 
 export function Banner(){
     return (
-        <section className="w-full h-11/12 relative 
-        flex items-center justify-evenly Linear-Banner">
+        <section className="w-full min-h-screen relative 
+        flex items-center justify-evenly border-b-2 border-blue-500">
             <article className="w-1/2 h-full flex flex-col items-center 
             justify-center p-3">
                 <div className="w-full h-2/3
