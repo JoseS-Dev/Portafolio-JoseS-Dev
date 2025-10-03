@@ -23,7 +23,7 @@ export function Banner(){
                 rounded-full ml-12 bg-black hover:shadow-blue-700 
                 hover:scale-105 transition-transform duration-300 cursor-pointer">
                     <img alt="JoseS-Dev" 
-                    className="w-full h-full rounded-full opacity-55" 
+                    className="w-full h-full rounded-full object-fill opacity-55" 
                     src="../../public/JoseS-Dev.jpg"/>
                 </figure>
             </article>

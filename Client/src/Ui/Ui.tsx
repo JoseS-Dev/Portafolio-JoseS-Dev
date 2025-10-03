@@ -36,3 +36,12 @@ export const paragraphsSections = {
         asegurando la creación de sistemas integrales y eficientes. las cuales son las siguientes:
     `
 }
+
+// Lista de mis datos personales
+export const myData = {
+    'Phone': '+58 414-4204521',
+    'Emails': {
+        'Principal': 'joseasantana05@gmail.com',
+        'Alternativo': 'josantana22@ujap.edu.ve'
+    } 
+}

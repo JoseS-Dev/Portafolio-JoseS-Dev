@@ -3,6 +3,7 @@ import { Banner } from "./Components/Banner"
 import { About } from "./Components/AboutMe"
 import { Skills } from "./Components/Skills"
 import { Proyectos } from "./Components/Proyects"
+import { Contact } from "./Components/Contact"
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <About/>
       <Skills/>
       <Proyectos/>
+      <Contact/>
     </main>
   )
 }

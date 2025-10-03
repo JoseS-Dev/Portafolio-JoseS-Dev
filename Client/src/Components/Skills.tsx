@@ -27,7 +27,7 @@ export function Skills(){
                                 <h3 className="text-xl">{skill.category}</h3>
                                 <skill.Icon/>
                             </div>
-                            <div className='w-full h-11/12 grid grid-cols-auto-fill gap-2 p-1.5 px-3'>
+                            <div className='w-full h-11/12 grid grid-cols-auto-fill gap-1.5 p-1.5 px-3'>
                                 {skill.items.map((item, idx) => (
                                     <span key={idx} className='w-auto h-10 border-2 border-blue-400 
                                     text-lg tracking-tighter font-semibold italic p-1 rounded-xl 
