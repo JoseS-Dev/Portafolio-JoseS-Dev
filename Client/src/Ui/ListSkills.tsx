@@ -32,7 +32,7 @@ export const ListSkills = [
             'MySQL',
             'PostgreSQL',
             'MongoDB',
-            'Superbase',
+            'Supabase',
             'SQL Server'
         ]
     },
