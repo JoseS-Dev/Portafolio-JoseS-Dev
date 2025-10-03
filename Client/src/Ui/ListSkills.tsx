@@ -62,13 +62,13 @@ export const ListSkills = [
             'POO',
             'MVC',
             'API',
-            'ECMAScript ES6',
+            'ECMAScript',
             'MVP',
             'SCRUM',
             'SOLID',
             'M.Cascada',
             'Diseño Web',
-            'Desarrollo Web',
+            'D.Web',
             'P. Modular'
         ]
     },
