@@ -17,7 +17,7 @@ app.use(cors({
 
 // Rutas
 app.use('/api-send', RouteEmail);
-app.use('/', (req, res) => {
+app.get('/', (req, res) => {
     res.send('API de envio de emails funcionando correctamente');
 })
 
