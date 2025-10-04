@@ -16,7 +16,7 @@ app.use(cors({
 }));
 
 // Rutas
-app.use('/api', RouteEmail);
+app.use('/api-send', RouteEmail);
 
 // Escuchamos al servidor
 if(process.env.NODE_ENV !== 'development'){
