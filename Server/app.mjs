@@ -19,6 +19,8 @@ app.use(cors({
 app.use('/api', RouteEmail);
 
 // Escuchamos al servidor
-app.listen(process.env.PORT, () => {
-    console.log(`Servidor escuchando en http://localhost:${process.env.PORT}`);
-})
+if(process.env.NODE_ENV !== 'development'){
+    app.listen(process.env.PORT, () => {
+        console.log(`Servidor corriendo en el puerto ${process.env.PORT}`);
+    });
+}
