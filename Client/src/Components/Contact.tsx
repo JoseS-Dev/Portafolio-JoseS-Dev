@@ -1,11 +1,62 @@
 import { ListSocialMedia } from "../Ui/ListSocialMedia"
 import { myData } from "../Ui/Ui"
+import { sendContactMail } from "../Services/ServicesMail";
+import { useState } from "react"
+import swal from 'sweetalert2'
 
 export function Contact() {
+    const [nameContact, setNameContact] = useState('');
+    const [lastNameContact, setLastNameContact] = useState('');
+    const [emailContact, setEmailContact] = useState('');
+    const [phoneContact, setPhoneContact] = useState('');
+    const [messageContact, setMessageContact] = useState('');
+
+    // Handle para mandar el formulario
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        if(!nameContact || !lastNameContact || !emailContact || !phoneContact || !messageContact){
+            swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Por favor, completa todos los campos del formulario.',
+            })
+        }
+        const ContactForm = {
+            name_contact: nameContact,
+            last_name_contact: lastNameContact,
+            email_contact: emailContact,
+            phone_contact: phoneContact,
+            message_contact: messageContact,
+        }
+        try {
+            const response = await sendContactMail(ContactForm);
+            if(response.error) swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: `${response.message}`
+            })
+            else{
+                swal.fire({
+                    icon: 'success',
+                    title: 'Éxito',
+                    text: 'El correo se ha enviado correctamente.'
+                })
+            }
+        }
+        catch(error){
+            swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Hubo un problema al enviar el correo. Por favor, inténtalo de nuevo más tarde.',
+            })
+        }
+    }
+    
+    
     return (
         <section id="Contacto" className="w-full min-h-[36rem] flex flex-col lg:flex-row gap-4 p-2 md:p-4">
             <article className="w-full lg:w-3/5 h-full p-2 md:p-3">
-                <form className="w-full h-full flex flex-col items-center gap-2">
+                <form onSubmit={handleSubmit} className="w-full h-full flex flex-col items-center gap-2">
                     <h2 className="text-2xl md:text-3xl border-b-2 border-blue-500 w-full tracking-tighter italic text-center md:text-left">
                         Deja tu comentario
                     </h2>
@@ -16,6 +67,9 @@ export function Contact() {
                                 type="text"
                                 className="w-full h-12 md:h-16 border-2 border-l-0 border-blue-500 p-1 text-base md:text-lg tracking-tighter italic placeholder:italic placeholder:text-gray-500 focus:outline-none focus:border-blue-700"
                                 placeholder="Escribe tu nombre"
+                                value={nameContact}
+                                onChange={(e) => setNameContact(e.target.value)}
+                                name="name_contact"
                             />
                         </div>
                         <div className="w-full md:w-1/2 flex flex-col items-center p-1.5">
@@ -24,6 +78,9 @@ export function Contact() {
                                 type="text"
                                 className="w-full h-12 md:h-16 border-2 border-l-0 border-blue-500 p-1 text-base md:text-lg tracking-tighter italic placeholder:italic placeholder:text-gray-500 focus:outline-none focus:border-blue-700"
                                 placeholder="Escribe tu apellido"
+                                value={lastNameContact}
+                                onChange={(e) => setLastNameContact(e.target.value)}
+                                name="last_name_contact"
                             />
                         </div>
                     </div>
@@ -34,6 +91,9 @@ export function Contact() {
                                 type="text"
                                 className="w-full h-12 md:h-16 border-2 border-l-0 border-blue-500 p-1 text-base md:text-lg tracking-tighter italic placeholder:italic placeholder:text-gray-500 focus:outline-none focus:border-blue-700"
                                 placeholder="Escribe tu correo"
+                                value={emailContact}
+                                onChange={(e) => setEmailContact(e.target.value)}
+                                name="email_contact"
                             />
                         </div>
                         <div className="w-full md:w-1/2 flex flex-col items-center p-1.5">
@@ -42,6 +102,9 @@ export function Contact() {
                                 type="text"
                                 className="w-full h-12 md:h-16 border-2 border-l-0 border-blue-500 p-1 text-base md:text-lg tracking-tighter italic placeholder:italic placeholder:text-gray-500 focus:outline-none focus:border-blue-700"
                                 placeholder="Escribe tu número de teléfono"
+                                value={phoneContact}
+                                onChange={(e) => setPhoneContact(e.target.value)}
+                                name="phone_contact"
                             />
                         </div>
                     </div>
@@ -51,6 +114,9 @@ export function Contact() {
                             <textarea
                                 className="w-full h-24 md:h-32 border-2 border-l-0 border-blue-500 p-1 text-base md:text-lg tracking-tighter italic placeholder:italic placeholder:text-gray-500 focus:outline-none focus:border-blue-700"
                                 placeholder="Escribe el asunto"
+                                value={messageContact}
+                                onChange={(e) => setMessageContact(e.target.value)}
+                                name="message_contact"
                             ></textarea>
                         </div>
                         <div className="w-full md:w-1/2 flex flex-col items-center justify-center">

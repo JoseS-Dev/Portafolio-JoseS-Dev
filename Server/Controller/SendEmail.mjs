@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export class SendEmail {
-    sendEmail = (req, res) => {
+    sendEmail = async (req, res) => {
         const result = validateContact(req.body);
         try{
             if(!result.success) return res.status(400).json(
