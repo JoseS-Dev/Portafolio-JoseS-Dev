@@ -18,7 +18,7 @@ app.use(cors({
 // Rutas
 app.use('/api-send', RouteEmail);
 app.get('/', (req, res) => {
-    res.send('API de envio de emails funcionando correctamente');
+    res.json('Hola Mundo desde el servidor de Portafolio-JoseS-Dev');
 })
 
 // Escuchamos al servidor
