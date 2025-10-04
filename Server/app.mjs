@@ -22,7 +22,7 @@ app.use('/', (req, res) => {
 })
 
 // Escuchamos al servidor
-if(process.env.NODE_ENV !== 'development'){
+if(process.env.NODE_ENV !== 'production'){
     app.listen(process.env.PORT, () => {
         console.log(`Servidor corriendo en el puerto ${process.env.PORT}`);
     });
