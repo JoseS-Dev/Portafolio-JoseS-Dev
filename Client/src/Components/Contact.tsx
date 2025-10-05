@@ -1,7 +1,7 @@
 import { ListSocialMedia } from "../Ui/ListSocialMedia"
 import { myData } from "../Ui/Ui"
-import { sendContactMail } from "../Services/ServicesMail";
 import { useState } from "react"
+import emailjs from "@emailjs/browser"
 import swal from 'sweetalert2'
 
 export function Contact() {
@@ -29,19 +29,31 @@ export function Contact() {
             message_contact: messageContact,
         }
         try {
-            const response = await sendContactMail(ContactForm);
-            if(response.error) swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: `${response.message}`
-            })
-            else{
+            emailjs.send(
+                import.meta.env.VITE_SERVICE_ID,
+                import.meta.env.VITE_TEMPLATE_ID,
+                ContactForm,
+                import.meta.env.VITE_PUBLIC_KEY
+            ).then((response) => {
+                console.log('Correo enviado', response.status, response.text);
                 swal.fire({
                     icon: 'success',
-                    title: 'Éxito',
-                    text: 'El correo se ha enviado correctamente.'
+                    title: 'Correo enviado',
+                    text: 'Tu correo ha sido enviado exitosamente. ¡Gracias por contactarme!',
                 })
-            }
+                setNameContact('');
+                setLastNameContact('');
+                setEmailContact('');
+                setPhoneContact('');
+                setMessageContact('');
+            }).catch((error) => {
+                console.log(error);
+                swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Hubo un problema al enviar el correo. Por favor, inténtalo de nuevo más tarde.',
+                })
+            })
         }
         catch(error){
             swal.fire({
