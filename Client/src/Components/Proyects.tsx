@@ -1,15 +1,17 @@
 import { ListProyects } from "../Ui/ListProyectos"
+import { useHookAnimation } from "../Hooks/AnimationHook"
 
 export function Proyectos() {
+    const {sectionref, isVisible} = useHookAnimation();
     return (
-        <section id="Proyectos" className="w-full min-h-[40rem] flex flex-col items-center p-2 md:p-4 border-b-2 border-blue-500 gap-2">
-            <article className="w-full flex flex-col p-2 items-center gap-1.5">
+        <section ref={sectionref} id="Proyectos" className="w-full min-h-[40rem] flex flex-col items-center p-2 md:p-4 border-b-2 border-blue-500 gap-2">
+            <article className={`w-full flex flex-col p-2 items-center gap-1.5 scroll-animate ${isVisible ? 'animation' : ''}`}>
                 <h2 className="text-2xl md:text-3xl font-semibold italic border-b-2 w-full border-blue-500 text-center md:text-left">Mis Proyectos</h2>
                 <p className="text-base md:text-xl tracking-tighter px-2 first-letter:text-2xl first-letter:text-blue-700 text-center md:text-left">
                     A continuación les muestreo una colección de implementaciones prácticas que han servido como campo de entrenamiento para consolidar y expandir mis conocimientos de programación. Estos proyectos reflejan mi crecimiento y capacidad para entregar soluciones funcionales. Los cuales son los siguientes:
                 </p>
             </article>
-            <article className="w-full flex flex-col items-center">
+            <article className={`w-full flex flex-col items-center scroll-animate ${isVisible ? 'animation' : ''}`}>
                 <div className="w-full flex flex-wrap justify-center md:justify-evenly gap-4 md:gap-3 p-1 md:p-2 overflow-auto">
                     {ListProyects.map((proyect, index) => (
                         <a

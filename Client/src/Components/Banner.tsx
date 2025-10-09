@@ -2,7 +2,7 @@ import { titlesSections, paragraphsSections } from "../Ui/Ui"
 
 export function Banner() {
     return (
-        <section className="w-full min-h-[28rem] md:min-h-screen relative flex flex-col md:flex-row items-center justify-evenly border-b-2 border-blue-500 px-2 md:px-0 py-4 md:py-0 gap-6 md:gap-0">
+        <section className="w-full min-h-[28rem] md:min-h-screen relative flex flex-col md:flex-row items-center justify-around border-b-2 border-blue-500 px-2 md:px-0 py-4 md:py-0 gap-3 md:gap-0">
             <article className="w-full md:w-3/5 flex flex-col items-center justify-center p-2 md:p-3">
                 <div className="w-full flex flex-col justify-center gap-2 md:gap-1.5 px-2 md:px-7 mb-4 md:mb-12 md:ml-6">
                     <h2 className="text-3xl md:text-5xl text-center md:text-left">

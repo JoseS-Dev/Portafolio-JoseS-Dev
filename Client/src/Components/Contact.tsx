@@ -1,10 +1,12 @@
 import { ListSocialMedia } from "../Ui/ListSocialMedia"
 import { myData } from "../Ui/Ui"
 import { useState } from "react"
+import { useHookAnimation } from "../Hooks/AnimationHook"
 import emailjs from "@emailjs/browser"
 import swal from 'sweetalert2'
 
 export function Contact() {
+    const {sectionref, isVisible} = useHookAnimation();
     const [nameContact, setNameContact] = useState('');
     const [lastNameContact, setLastNameContact] = useState('');
     const [emailContact, setEmailContact] = useState('');
@@ -66,8 +68,8 @@ export function Contact() {
     
     
     return (
-        <section id="Contacto" className="w-full min-h-[36rem] flex flex-col lg:flex-row gap-4 p-2 md:p-4">
-            <article className="w-full lg:w-3/5 h-full p-2 md:p-3">
+        <section ref={sectionref} id="Contacto" className="w-full min-h-[36rem] flex flex-col lg:flex-row gap-4 p-2 md:p-4">
+            <article className={`w-full lg:w-3/5 h-full p-2 md:p-3 scroll-animate ${isVisible ? 'animation' : ''}`}>
                 <form onSubmit={handleSubmit} className="w-full h-full flex flex-col items-center gap-2">
                     <h2 className="text-2xl md:text-3xl border-b-2 border-blue-500 w-full tracking-tighter italic text-center md:text-left">
                         Deja tu comentario
@@ -142,7 +144,7 @@ export function Contact() {
                     </div>
                 </form>
             </article>
-            <article className="w-full lg:w-2/5 h-full border-t-2 lg:border-t-0 lg:border-l-2 border-blue-500 p-2 md:p-3 flex flex-col items-center gap-2.5">
+            <article className={`w-full lg:w-2/5 h-full border-t-2 lg:border-t-0 lg:border-l-2 border-blue-500 p-2 md:p-3 flex flex-col items-center gap-2.5 scroll-animate ${isVisible ? 'animation' : ''}`}>
                 <div className="w-full flex flex-col items-center gap-1.5 border-b-2 border-gray-600 p-1">
                     <h2 className="w-full text-2xl md:text-3xl tracking-tighter italic border-b-2 border-blue-500 text-center md:text-left">Contacto</h2>
                     <p className="p-2 h-auto text-base md:text-xl tracking-tighter first-letter:text-xl first-letter:text-blue-500 text-center md:text-left">

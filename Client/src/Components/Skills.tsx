@@ -1,9 +1,11 @@
 import { ListSkills } from '../Ui/ListSkills';
 import { paragraphsSections, titlesSections } from '../Ui/Ui';
+import { useHookAnimation } from '../Hooks/AnimationHook';
 export function Skills() {
+    const {sectionref, isVisible} = useHookAnimation();
     return (
-        <section id="Skills" className="w-full min-h-[32rem] p-2 md:p-4 border-b-2 border-blue-500 flex flex-col items-center gap-2">
-            <article className="w-full flex flex-col items-center gap-1.5 p-2">
+        <section ref={sectionref} id="Skills" className="w-full min-h-[32rem] p-2 md:p-4 border-b-2 border-blue-500 flex flex-col items-center gap-2">
+            <article className={`w-full flex flex-col items-center gap-1.5 p-2 scroll-animate ${isVisible ? 'animation' : ''}`}>
                 <h2 className="text-2xl md:text-3xl font-semibold italic w-full border-b-2 border-blue-500 px-2 text-center md:text-left">
                     {titlesSections.Skills}
                 </h2>
@@ -11,7 +13,7 @@ export function Skills() {
                     {paragraphsSections.Skill}
                 </p>
             </article>
-            <article className="w-full flex flex-col items-center">
+            <article className={`w-full flex flex-col items-center scroll-animate ${isVisible ? 'animation' : ''}`}>
                 <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 p-1 md:p-2">
                     {ListSkills.map((skill, index) => (
                         <div

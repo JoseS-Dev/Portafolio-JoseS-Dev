@@ -1,8 +1,10 @@
 import { paragraphsSections, titlesSections } from "../Ui/Ui"
+import { useHookAnimation } from "../Hooks/AnimationHook"
 export function About() {
+    const {sectionref, isVisible} = useHookAnimation();
     return (
-        <section id="Sobre Mi" className="w-full min-h-[32rem] p-2 md:p-4 flex flex-col items-center border-b-2 border-blue-500">
-            <article className="w-full min-h-full flex flex-col items-center gap-1.5 p-2">
+        <section ref={sectionref} id="Sobre Mi" className="w-full min-h-[32rem] p-2 md:p-4 flex flex-col items-center border-b-2 border-blue-500">
+            <article className={`w-full min-h-full flex flex-col items-center gap-1.5 p-2 scroll-animate ${isVisible ? 'animation' : ''}`}>
                 <h2 className="text-2xl md:text-3xl px-2 font-semibold italic w-full border-b-2 border-blue-600 text-center md:text-left">
                     {titlesSections.About}
                 </h2>
@@ -17,7 +19,7 @@ export function About() {
                     </div>
                     <div className="w-full md:w-2/5 flex flex-col items-center justify-center mt-4 md:mt-0">
                         <figure className="w-3/4 md:w-full h-48 md:h-full p-2 md:p-5 rounded-2xl">
-                            <img alt="AboutMe-Image" src="/About-me.png" className="object-fill w-full h-full rounded-2xl" />
+                            <img alt="AboutMe-Image" src="/About-me.png" loading="lazy" className="object-fill w-full h-full rounded-2xl" />
                         </figure>
                     </div>
                 </div>

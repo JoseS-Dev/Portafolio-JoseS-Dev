@@ -6,6 +6,12 @@ export const titlesSections = {
     Skills: 'Mis Skills'
 }
 
+// Configuracion para la animación del scroll
+export const AnimateConfig = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -100px 0px",
+}
+
 // Lista de parrafos de las secciones
 export const paragraphsSections = {
     Home: `
