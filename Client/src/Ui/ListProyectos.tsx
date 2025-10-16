@@ -2,8 +2,8 @@
 export const ListProyects = [
     {
         'ImageURl': '/UFC-banner.jpg',
-        'LinkRepo': 'https://github.com/JoseS-Dev/UFC-API-APP',
-        'titleApp': 'UFC-API-APP',
+        'LinkRepo': 'https://github.com/JoseS-Dev/The_Octagon_Data_frontend',
+        'titleApp': 'Octagon Data',
         'status': 'En Desarrollo',
         'tecnologies': [
             'React.js',
